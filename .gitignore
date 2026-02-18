@@ -1,0 +1,8 @@
+# dotnet
+bin
+obj
+
+# MacOS
+.DS_Store
+
+*txt
