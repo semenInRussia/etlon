@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace Etlon;
 
 public enum DrinkSize { Small, Medium, Large }
@@ -46,6 +48,16 @@ public class Drink
     }
     return ans;
   }
+
+  public string GetDescription()
+  {
+    string desc = Name;
+    if (Options.Count > 0)
+    {
+      desc += " with " + string.Join(", ", Options.Select(o => o.Name));
+    }
+    return desc;
+  }
 }
 
 public class OrderItem(Drink drink, DrinkSize size)
@@ -90,4 +102,22 @@ public class DiscountService
     return 0;
   }
 }
+
+public class InvoiceGenerator
+{
+  public string GenerateInvoice(Order order, decimal finalPrice, decimal discount)
+  {
+    StringBuilder sb = new();
+    foreach (var item in order.Items)
+    {
+      sb.AppendLine($"{item.Drink.GetDescription()} [{item.GetTotal()}]");
+    }
+    sb.AppendLine("---");
+    sb.AppendLine($"Subtotal: {order.GetSubtotal()}");
+    sb.AppendLine($"Discount: {discount}");
+    sb.AppendLine($"Total: {finalPrice}");
+    return sb.ToString();
+  }
+}
+
 
