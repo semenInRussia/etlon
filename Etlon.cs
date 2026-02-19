@@ -77,7 +77,7 @@ public class Order
 
   public void AddItem(OrderItem item)
   {
-    Items.Append(item);
+    Items.Add(item);
   }
 
   public decimal GetSubtotal()
