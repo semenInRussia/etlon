@@ -1,4 +1,4 @@
-namespace Etlon;
+namespace Etlon.Order;
 
 public class Order
 {

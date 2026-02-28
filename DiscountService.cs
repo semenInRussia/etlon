@@ -2,7 +2,7 @@ namespace Etlon;
 
 public class DiscountService
 {
-  public decimal CalculateTotalDiscount(Order order)
+  public decimal CalculateTotalDiscount(Order.Order order)
   {
     if (order.Items.Count > 3)
     {

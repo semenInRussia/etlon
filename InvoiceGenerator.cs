@@ -1,8 +1,10 @@
+using System.Text;
+
 namespace Etlon;
 
 public class InvoiceGenerator
 {
-  public string GenerateInvoice(Order order, decimal finalPrice, decimal discount)
+  public string GenerateInvoice(Order.Order order, decimal finalPrice, decimal discount)
   {
     StringBuilder sb = new();
     foreach (var item in order.Items)

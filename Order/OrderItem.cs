@@ -1,4 +1,6 @@
-namespace Etlon;
+namespace Etlon.Order;
+
+using Etlon.Drink;
 
 public class OrderItem(Drink drink, DrinkSize size)
 {

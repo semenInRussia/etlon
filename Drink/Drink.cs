@@ -1,4 +1,4 @@
-namespace Etlon;
+namespace Etlon.Drink;
 
 public class Drink
 {
